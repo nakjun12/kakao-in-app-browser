@@ -3,7 +3,7 @@ import './App.css';
 import { Textarea } from './components/textarea/textarea';
 import { useLocalStorageStateWithGeneric } from './hooks/use-local-storage-state-with-generic';
 
-const answerArray = Array.from({ length: 1000 });
+const answerArray = Array.from({ length: 5 });
 
 function App() {
 
@@ -56,7 +56,7 @@ console.log(answer);
 
         }}>
         <h2>1000 Textareas</h2>
-        {Array.from({ length: 1000 }).map((_, index) => (
+        {answerArray.map((_, index) => (
           <div style={{ display: "flex", flexDirection: "column", gap: "8px", width: "100%", maxWidth: "500px" }}>
             <div style={{ fontSize: "12px", color: "gray", height: "300px", backgroundColor: "gray" }}>{index}</div>
       

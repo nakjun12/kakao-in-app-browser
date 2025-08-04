@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import './App.css';
+import { ScrollBar } from './components/scroll-bar/scroll-bar';
 import { Textarea } from './components/textarea/textarea';
 import { useHandleScreenSize } from './hooks/use-handle-screen-size';
 import { useLocalStorageStateWithGeneric } from './hooks/use-local-storage-state-with-generic';
@@ -38,7 +39,16 @@ useHandleScreenSize();
 
 
   return (
-    <>
+<div
+  style={{
+    display: 'grid',
+    height: 'calc(var(--vh, 1vh) * 100)',
+    width: '100vw',
+    overflow: 'hidden',
+    backgroundColor: 'goldenrod'
+  }}
+>
+  <ScrollBar style={{ position: 'relative' }}>
       <hr style={{ margin: "2rem 0" }} />
       <button
         onClick={() => {
@@ -72,7 +82,9 @@ useHandleScreenSize();
           </div>
         ))}
       </div>
-    </>
+    </ScrollBar>
+    <div/>
+    </div>
   );
 }
 

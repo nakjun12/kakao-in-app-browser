@@ -49,6 +49,11 @@ useHandleScreenSize();
   }}
 >
   <ScrollBar style={{ position: 'relative' }}>
+<div style={{
+ margin: '0 auto',
+ padding: '20px 16px',
+ maxWidth: '770px'
+}}>
       <hr style={{ margin: "2rem 0" }} />
       <button
         onClick={() => {
@@ -81,7 +86,7 @@ useHandleScreenSize();
           />
           </div>
         ))}
-      </div>
+      </div></div>
     </ScrollBar>
     <div/>
     </div>

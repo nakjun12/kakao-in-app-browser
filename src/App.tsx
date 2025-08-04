@@ -46,7 +46,7 @@ function App() {
             key={index} // 리스트 렌더링 시 각 요소를 구별하기 위한 고유한 key
             rows={2}
             placeholder={`Text Area #${index + 1}`}
-            style={{ width: "80%", height: "600px", maxWidth: "400px" }}
+            style={{ width: "80%", height: "100px", maxWidth: "400px" }}
           />
         ))}
       </div>

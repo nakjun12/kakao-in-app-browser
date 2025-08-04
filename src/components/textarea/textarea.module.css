@@ -1,0 +1,98 @@
+.textarea {
+	width: 100%;
+	height: 100%;
+	padding: 5px 10px;
+	box-sizing: border-box;
+	resize: none;
+	font-family: "Pretendard";
+	white-space: pre-line;
+	border: 1px solid #dadde9; /* var(--grayScale5) */
+	border-radius: var(--border-radius-sm);
+	font-size: var(--font-p4);
+	caret-color: #4a92ff; /* var(--plttBlue7) */
+	font-weight: var(--medium);
+	background-color: #ffffff; /* var(--grayScale1) */
+	color: #1e1e2a; /* var(--grayScale10) */
+}
+
+.textarea_no_border {
+	width: 100%;
+	height: 100%;
+	padding: 5px 10px;
+	box-sizing: border-box;
+	outline: none;
+	resize: none;
+	font-family: "Pretendard";
+	white-space: pre-line;
+	border-radius: var(--border-radius-sm);
+	font-size: var(--font-p4);
+	caret-color: #4a92ff; /* var(--plttBlue7) */
+	font-weight: var(--medium);
+	background-color: #ffffff; /* var(--grayScale1) */
+	color: #1e1e2a; /* var(--grayScale10) */
+}
+
+.textarea::-webkit-scrollbar .textarea_no_border::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+	display: block !important;
+}
+
+.textarea::-webkit-scrollbar-track,
+.textarea_no_border::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+.textarea::-webkit-scrollbar-thumb,
+.textarea_no_border::-webkit-scrollbar-thumb {
+	background-color: #c0c3d5; /* var(--grayScale6) */
+	background-clip: padding-box;
+	border-radius: 20px;
+	border: 3px solid transparent;
+}
+
+.textarea::placeholder {
+	color: #c0c3d5; /* var(--grayScale6) */
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 18px; /* 150% */
+}
+.textarea_no_border::placeholder {
+	color: #c0c3d5; /* var(--grayScale6) */
+}
+
+.textarea:required,
+.textarea_no_border:required {
+	border: 1px solid #4a92ff; /* var(--plttBlue7) */
+	box-shadow: 0 0 0 2px #eff7ff; /* var(--plttBlue3) */
+}
+
+.textarea:disabled,
+.textarea_no_border:disabled {
+	cursor: not-allowed;
+	background-color: #ebeef7; /* var(--grayScale4) */
+}
+
+.textarea.error,
+.textarea_no_border.error,
+.textarea.error:focus,
+.textarea_no_border.error:focus {
+	border-color: #ff5a4b; /* var(--error3) */
+}
+
+.textarea:active {
+	box-shadow: 0 0 0 2px #eff7ff; /* var(--plttBlue3) */
+}
+
+.textarea:hover {
+	background-color: #fcfeff; /* var(--plttBlue1) */
+}
+
+.textarea:focus {
+	appearance: none;
+	outline: none;
+	border: 1px solid #8ebbff; /* var(--plttBlue6) */
+	box-shadow: 0 0 0 2px #eff7ff; /* var(--plttBlue3) */
+}
+

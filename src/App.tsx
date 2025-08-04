@@ -1,11 +1,26 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import './App.css'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+  useEffect(() => {
+    const userAgent = navigator.userAgent.toLowerCase();
+    const isKakaoInApp = userAgent.includes("kakaotalk");
 
+    console.log(userAgent);
+    console.log(isKakaoInApp);
+    console.log(window.location.href);
+    // 카카오톡 인앱 브라우저일 경우에만 실행
+    if (isKakaoInApp) {
+      console.log("카카오톡 인앱 브라우저일 경우");
+      const targetUrl = `${window.location.href}/`;
+      window.location.replace(
+        `kakaotalk://web/openExternal?url=${encodeURIComponent(targetUrl)}`
+      );
+    }
+  }, []);
   return (
     <>
       <div>

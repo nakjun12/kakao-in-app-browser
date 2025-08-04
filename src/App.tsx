@@ -17,17 +17,18 @@ function App() {
       window.location.replace(
         `kakaotalk://web/openExternal?url=${encodeURIComponent(targetUrl)}`
       );
+
+      setTimeout(() => {
+        window.location.href = "kakaotalk://inappbrowser/close";
+      }, 1000);
+
+   
     }
   }, []);
   return (
     <>
 
       <hr style={{ margin: "2rem 0" }} />
-      <button onClick={() => {
-        window.location.href = "kakaoweb://closeBrowser";
-      }}>
-        closeBrowser
-      </button>
       <button onClick={() => {
         window.location.href = "kakaotalk://inappbrowser/close";
       }}>

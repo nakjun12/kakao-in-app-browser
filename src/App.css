@@ -3,8 +3,35 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  --pltt-gray-scale10: #1e1e2a;
+  --pltt-gray-scale6: #c0c3d5;
+  --pltt-gray-scale5: #dadde9;
+  --pltt-blue6: #8EBBFF;
+  --pltt-blue3: #E2EEFF;
+  --pltt-8: 8px;
+  --pltt-10: 10px;
+  --pltt-lg: 8px;
 }
 
+.input-field {
+  font-size: 16px;
+  line-height: 26px;
+  color: var(--pltt-gray-scale10);
+  border: 1px solid var(--pltt-gray-scale5);
+  border-radius: var(--pltt-lg);
+  padding: var(--pltt-8) var(--pltt-10);
+  outline: none;
+  
+  &::placeholder {
+    color: var(--pltt-gray-scale6);
+  }
+  
+  &:focus {
+    border-radius: 12px;
+    border: 1.5px solid var(--pltt-blue6);
+    box-shadow: 0 0 0 3px var(--pltt-blue3);
+  }
+}
 .logo {
   height: 6em;
   padding: 1.5em;

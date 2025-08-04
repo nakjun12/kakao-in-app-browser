@@ -23,7 +23,16 @@ function App() {
     <>
 
       <hr style={{ margin: "2rem 0" }} />
-
+      <button onClick={() => {
+        window.location.href = "kakaoweb://closeBrowser";
+      }}>
+        closeBrowser
+      </button>
+      <button onClick={() => {
+        window.location.href = "kakaotalk://inappbrowser/close";
+      }}>
+        closeInAppBrowser
+      </button>
       {/* 50개의 Textarea를 세로로 나열하는 부분 */}
       <div
         style={{

@@ -18,9 +18,7 @@ function App() {
         `kakaotalk://web/openExternal?url=${encodeURIComponent(targetUrl)}`
       );
 
-      setTimeout(() => {
-        window.location.href = "kakaotalk://inappbrowser/close";
-      }, 1000);
+
 
    
     }

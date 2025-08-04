@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import './App.css';
 import { Textarea } from './components/textarea/textarea';
+import { useHandleScreenSize } from './hooks/use-handle-screen-size';
 import { useLocalStorageStateWithGeneric } from './hooks/use-local-storage-state-with-generic';
 
 const answerArray = Array.from({ length: 5 });
@@ -33,8 +34,8 @@ const [answer, setAnswer] = useLocalStorageStateWithGeneric<
     }
   }, []);
 
+useHandleScreenSize();
 
-console.log(answer);
 
   return (
     <>

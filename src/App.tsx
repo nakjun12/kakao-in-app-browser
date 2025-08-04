@@ -51,10 +51,15 @@ console.log(answer);
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          gap: "8px"
+          gap: "8px",
+          width: "100%",
+
         }}>
         <h2>1000 Textareas</h2>
         {Array.from({ length: 1000 }).map((_, index) => (
+          <div style={{ display: "flex", flexDirection: "column", gap: "8px", width: "100%", maxWidth: "500px" }}>
+            <div style={{ fontSize: "12px", color: "gray", height: "300px", backgroundColor: "gray" }}>{index}</div>
+      
           <Textarea
             key={index} // 리스트 렌더링 시 각 요소를 구별하기 위한 고유한 key
             placeholder={`Text Area #${index + 1}`}
@@ -63,6 +68,7 @@ console.log(answer);
               setAnswer({ ...answer, [index]: e.target.value });
             }}
           />
+          </div>
         ))}
       </div>
     </>

@@ -2,6 +2,11 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   --pltt-gray-scale10: #1e1e2a;
   --pltt-gray-scale6: #c0c3d5;

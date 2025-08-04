@@ -1,10 +1,8 @@
-import { useEffect, useState } from 'react'
-import './App.css'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useEffect } from 'react';
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
+
   useEffect(() => {
     const userAgent = navigator.userAgent.toLowerCase();
     const isKakaoInApp = userAgent.includes("kakaotalk");
@@ -23,28 +21,29 @@ function App() {
   }, []);
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+
+      <hr style={{ margin: "2rem 0" }} />
+
+      {/* 50개의 Textarea를 세로로 나열하는 부분 */}
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          gap: "8px"
+        }}>
+        <h2>1000 Textareas</h2>
+        {Array.from({ length: 1000 }).map((_, index) => (
+          <textarea
+            key={index} // 리스트 렌더링 시 각 요소를 구별하기 위한 고유한 key
+            rows={2}
+            placeholder={`Text Area #${index + 1}`}
+            style={{ width: "80%", maxWidth: "400px" }}
+          />
+        ))}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
 export default App

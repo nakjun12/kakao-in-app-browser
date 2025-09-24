@@ -371,6 +371,7 @@ const App = () => {
           {/* Textarea */}
           <div className="textarea-wrapper">
             <textarea
+              ref={textareaRef}
               placeholder="만족스러운 점이나 개선되어야 할 점이 있다면 구체적으로 입력해 주세요."
               value={currentAnswer.value}
               onChange={(e) => handleAnswerChange(e.target.value)}

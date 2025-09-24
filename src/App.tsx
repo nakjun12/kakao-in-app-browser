@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 type Answer = {
   id: number;
@@ -18,7 +18,7 @@ const App = () => {
       })
     )
   );
-
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
   // useEffect(() => {
   //   // viewport 높이 설정 (iOS Safari 대응)
   //   const setViewportHeight = () => {
@@ -389,6 +389,7 @@ const App = () => {
                 //   }, 300);
                 // }
               }}
+              onClick={() => textareaRef.current?.focus()}
               onBlur={() => {
                 console.log(
                   `Textarea for question ${currentQuestionIndex + 1} blurred`

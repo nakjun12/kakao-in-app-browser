@@ -18,6 +18,7 @@ const App = () => {
       })
     )
   );
+  const [isFocused, setIsFocused] = useState(false);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   // useEffect(() => {
   //   // viewport 높이 설정 (iOS Safari 대응)
@@ -376,6 +377,7 @@ const App = () => {
               onChange={(e) => handleAnswerChange(e.target.value)}
               rows={4}
               onFocus={() => {
+                setIsFocused(true);
                 console.log(
                   `Textarea for question ${currentQuestionIndex + 1} focused`
                 );
@@ -391,6 +393,7 @@ const App = () => {
               }}
               onClick={() => textareaRef.current?.focus()}
               onBlur={() => {
+                setIsFocused(false);
                 console.log(
                   `Textarea for question ${currentQuestionIndex + 1} blurred`
                 );
@@ -401,14 +404,16 @@ const App = () => {
       </div>
 
       {/* 하단 버튼 */}
-      <div className="bottom-container">
-        <button
-          className="submit-button"
-          onClick={handleNext}
-          disabled={!currentAnswer.selectedOption}>
-          {currentQuestionIndex === answers.length - 1 ? "제출" : "다음"}
-        </button>
-      </div>
+      {!isFocused && (
+        <div className="bottom-container">
+          <button
+            className="submit-button"
+            onClick={handleNext}
+            disabled={!currentAnswer.selectedOption}>
+            {currentQuestionIndex === answers.length - 1 ? "제출" : "다음"}
+          </button>
+        </div>
+      )}
     </div>
   );
 };

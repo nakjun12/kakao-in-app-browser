@@ -1,13 +1,22 @@
 import { useState } from "react";
 
+type Answer = {
+  id: number;
+  value: string;
+  selectedOption: string | null;
+};
+
 const App = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [answers, setAnswers] = useState(
-    Array.from({ length: 5 }, (_, i) => ({
-      id: i,
-      value: "",
-      selectedOption: null
-    }))
+  const [answers, setAnswers] = useState<Answer[]>(
+    Array.from(
+      { length: 5 },
+      (_, i): Answer => ({
+        id: i,
+        value: "",
+        selectedOption: null
+      })
+    )
   );
 
   // useEffect(() => {
@@ -23,7 +32,7 @@ const App = () => {
   //   return () => window.removeEventListener("resize", setViewportHeight);
   // }, []);
 
-  const handleAnswerChange = (value) => {
+  const handleAnswerChange = (value: string) => {
     setAnswers((prev) =>
       prev.map((answer, index) =>
         index === currentQuestionIndex ? { ...answer, value } : answer
@@ -31,7 +40,7 @@ const App = () => {
     );
   };
 
-  const handleOptionSelect = (option) => {
+  const handleOptionSelect = (option: string) => {
     setAnswers((prev) =>
       prev.map((answer, index) =>
         index === currentQuestionIndex
@@ -366,7 +375,7 @@ const App = () => {
               value={currentAnswer.value}
               onChange={(e) => handleAnswerChange(e.target.value)}
               rows={4}
-              onFocus={(e) => {
+              onFocus={() => {
                 console.log(
                   `Textarea for question ${currentQuestionIndex + 1} focused`
                 );

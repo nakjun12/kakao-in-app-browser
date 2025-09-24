@@ -254,7 +254,6 @@ const App = () => {
         
         /* 하단 버튼 영역 */
         .bottom-container {
-          height: 126px;
           background: white;
           display: flex;
           align-items: center;
